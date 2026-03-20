@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Game</title>
+</head>
+
+<body style="text-align:center">
+
+<h2>Color Prediction</h2>
+
+<h1 id="timer">30</h1>
+
+<button onclick="bet('Red')">Red</button>
+<button onclick="bet('Green')">Green</button>
+<button onclick="bet('Violet')">Violet</button>
+
+<h2 id="result"></h2>
+
+<script>
+
+let time=30;
+
+setInterval(function(){
+
+if(time>0){
+time--;
+document.getElementById("timer").innerHTML=time;
+}
+
+if(time==0){
+
+let colors=["Red","Green","Violet"];
+let result=colors[Math.floor(Math.random()*3)];
+
+document.getElementById("result").innerHTML="Result: "+result;
+
+time=30;
+
+}
+
+},1000);
+
+function bet(x){
+alert("You selected "+x);
+}
+
+</script>
+
+</body>
+</html>
